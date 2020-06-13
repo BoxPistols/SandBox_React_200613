@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.sass";
 import Comp01 from "./Comp01";
+import Hello from "./Hello";
 
 export default function App() {
   const hg = "hoge";
@@ -35,6 +36,7 @@ export default function App() {
   return (
     <div className="App">
       <h1 style={mgSty}>Hello CodeSandbox</h1>
+      <Hello name="Helloクラスから引き継いだ値" />
       <Comp01 />
       <p>{printFn("おれええええ", "red")}</p>
       <p>{hg}</p>
