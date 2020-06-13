@@ -13,6 +13,10 @@ class Hello extends React.Component {
       counter: 0, // reset
       stateMsg: "Count Start!",
       flg: true
+    // for count Up
+    this.state = {
+      counter: 0, // reset
+      stateMsg: "this.stateのメッセージ"
     };
     // function to bind(this)
     this.doAction = this.doAction.bind(this);
