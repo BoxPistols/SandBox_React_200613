@@ -32,6 +32,7 @@ class Hello extends React.Component {
         <button onClick={this.doAction}>button</button>
       </>
     );
+    this.name = props.name;
   }
 }
 
