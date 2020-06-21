@@ -8,6 +8,11 @@ class Hello extends React.Component {
     super(props);
     // for name view
     this.name = props.name;
+    // for count Up State
+    this.state = {
+      counter: 0, // reset
+      stateMsg: "Count Start!",
+      flg: true
     // for count Up
     this.state = {
       counter: 0, // reset
@@ -16,23 +21,24 @@ class Hello extends React.Component {
     // function to bind(this)
     this.doAction = this.doAction.bind(this);
   }
-  // functoin event { setState object: action }
+  // Functoin event { setState object: action }
   doAction(event) {
     this.setState(state => ({
-      counter: state.counter + 1
+      counter: state.counter + 1,                   
+      stateMsg: "Count: " + state.counter,
+      flg: !state.flg
     }));
   }
   render() {
     return (
       <>
-        <p style={msg}>
-          {this.props.name} / {this.state.stateMsg}
-        </p>
-        <p>{this.state.counter}</p>
+        {this.state.flg ? <p>toggle: true</p> : <p>toggle: false</p>}
+        <p style={msg}>{this.props.name}</p>
+        <p>{this.state.stateMsg}</p>
+        {/* <p>{this.state.counter}</p> */}
         <button onClick={this.doAction}>button</button>
       </>
     );
-    this.name = props.name;
   }
 }
 
